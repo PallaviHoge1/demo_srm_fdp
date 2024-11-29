@@ -23,4 +23,4 @@ def summarize(input_text):
     text = tokenizer.decode(summary_text_ids[0], skip_special_tokens=True)
     # Decoding Text
     print(text)
-    return text
+    return
