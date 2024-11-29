@@ -1,0 +1,5 @@
+flask
+pypdf2
+transformers
+torch
+notebook==6.1.5

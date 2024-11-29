@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Summarizer and Q&A</title>
+</head>
+<body>
+    <h1>Upload Document for Summarization</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".txt,.pdf,.docx" required>
+        <input type="submit" value="Upload">
+    </form>
+    
+    {% if summary %}
+        <h2>Summary:</h2>
+        <p>{{ summary }}</p>
+        
+        <h3>Ask a Question:</h3>
+        <form action="/ask" method="post">
+            <input type="text" name="question" required>
+            <input type="submit" value="Ask">
+        </form>
+        
+        {% if answer %}
+            <h3>Answer:</h3>
+            <p>{{ answer }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
